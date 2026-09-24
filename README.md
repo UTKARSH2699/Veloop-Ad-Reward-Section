@@ -1,8 +1,3 @@
-# Veloop-Ad-Reward-Section
-A modern React-based ad rewards interface where users can watch ads, track earnings, and complete daily reward goals
-
-
-
 # Veloop Ad Reward Section
 
 A modern React-based ad reward interface designed for Veloop Rewards. Users can watch ads, earn VEs, track their progress, and complete daily reward goals.
