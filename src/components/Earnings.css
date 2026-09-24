@@ -1,0 +1,648 @@
+/* ========================================
+   EARNINGS SECTION
+======================================== */
+
+.earnings-section {
+    width: 100%;
+    margin-top: 26px;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.earnings-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* ========================================
+   GLASS CARD
+======================================== */
+
+.earning-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 138px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+    padding: 21px 22px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.018) 55%,
+            rgba(255, 255, 255, 0.008)
+        ),
+        rgba(16, 28, 38, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.075);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+/* ========================================
+   GLASS LIGHT WASH
+======================================== */
+
+.earning-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 255, 255, 0.055),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   SUBTLE TOP LIGHT
+======================================== */
+
+.earning-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+    right: 12%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.10),
+        transparent
+    );
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   BASE HOVER
+======================================== */
+
+.earning-card:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        ),
+        rgba(18, 32, 43, 0.90);
+
+    border-color: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 17px 36px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+
+/* ========================================
+   TODAY — AMBER
+======================================== */
+
+.earning-card.today:hover {
+    border-color: rgba(246, 197, 44, 0.28);
+
+    box-shadow:
+        0 17px 38px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(246, 197, 44, 0.08),
+        0 0 60px rgba(246, 197, 44, 0.035),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+
+/* ========================================
+   LIFETIME — BLUE
+======================================== */
+
+.earning-card.lifetime:hover {
+    border-color: rgba(82, 170, 255, 0.24);
+
+    box-shadow:
+        0 17px 38px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(82, 170, 255, 0.075),
+        0 0 60px rgba(82, 170, 255, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+
+/* ========================================
+   ADS — GREEN
+======================================== */
+
+.earning-card.ads:hover {
+    border-color: rgba(82, 210, 145, 0.24);
+
+    box-shadow:
+        0 17px 38px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(82, 210, 145, 0.075),
+        0 0 60px rgba(82, 210, 145, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+
+/* ========================================
+   REMAINING — CYAN
+======================================== */
+
+.earning-card.remaining:hover {
+    border-color: rgba(72, 190, 220, 0.24);
+
+    box-shadow:
+        0 17px 38px rgba(0, 0, 0, 0.25),
+        0 0 26px rgba(72, 190, 220, 0.075),
+        0 0 60px rgba(72, 190, 220, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.earning-icon {
+    position: relative;
+    z-index: 1;
+
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #b9c8d1;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.075);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        0 6px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ========================================
+   ICON BASE HOVER
+======================================== */
+
+.earning-card:hover .earning-icon {
+    transform: translateY(-1px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.085),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ========================================
+   TODAY ICON
+======================================== */
+
+.earning-card.today:hover .earning-icon {
+    color: #f6c52c;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 197, 44, 0.14),
+            rgba(246, 197, 44, 0.045)
+        );
+
+    border-color: rgba(246, 197, 44, 0.25);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 7px 20px rgba(246, 197, 44, 0.09);
+}
+
+
+/* ========================================
+   LIFETIME ICON
+======================================== */
+
+.earning-card.lifetime:hover .earning-icon {
+    color: #65b8ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(82, 170, 255, 0.14),
+            rgba(82, 170, 255, 0.045)
+        );
+
+    border-color: rgba(82, 170, 255, 0.23);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 7px 20px rgba(82, 170, 255, 0.08);
+}
+
+
+/* ========================================
+   ADS ICON
+======================================== */
+
+.earning-card.ads:hover .earning-icon {
+    color: #63d99a;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(82, 210, 145, 0.14),
+            rgba(82, 210, 145, 0.045)
+        );
+
+    border-color: rgba(82, 210, 145, 0.23);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 7px 20px rgba(82, 210, 145, 0.08);
+}
+
+
+/* ========================================
+   REMAINING ICON
+======================================== */
+
+.earning-card.remaining:hover .earning-icon {
+    color: #63cce5;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(72, 190, 220, 0.14),
+            rgba(72, 190, 220, 0.045)
+        );
+
+    border-color: rgba(72, 190, 220, 0.23);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 7px 20px rgba(72, 190, 220, 0.08);
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.earning-card-content {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.earning-card-top {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 8px;
+}
+
+
+.earning-label {
+    color: #9eafb9;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+
+.earning-card:hover .earning-label {
+    color: #b8c5cc;
+}
+
+
+/* ========================================
+   VALUE
+======================================== */
+
+.earning-value {
+    display: flex;
+    align-items: baseline;
+
+    gap: 6px;
+
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.earning-value span {
+    color: #f8fafb;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -0.8px;
+
+    font-variant-numeric: tabular-nums;
+
+    transition: text-shadow 0.25s ease;
+}
+
+
+/* ========================================
+   VALUE HOVER
+======================================== */
+
+.earning-card.today:hover .earning-value span {
+    text-shadow:
+        0 0 20px rgba(246, 197, 44, 0.12);
+}
+
+
+.earning-card.lifetime:hover .earning-value span {
+    text-shadow:
+        0 0 20px rgba(82, 170, 255, 0.10);
+}
+
+
+.earning-card.ads:hover .earning-value span {
+    text-shadow:
+        0 0 20px rgba(82, 210, 145, 0.10);
+}
+
+
+.earning-card.remaining:hover .earning-value span {
+    text-shadow:
+        0 0 20px rgba(72, 190, 220, 0.10);
+}
+
+
+/* ========================================
+   UNIT
+======================================== */
+
+.earning-value small {
+    color: #f6c52c;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   SUBTEXT
+======================================== */
+
+.earning-subtext {
+    margin-top: 8px;
+
+    color: #8495a1;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+
+.earning-card.today .earning-subtext {
+    color: #aebbc2;
+}
+
+
+.earning-card.lifetime .earning-subtext {
+    color: #899aa5;
+}
+
+
+.earning-card.ads .earning-subtext {
+    color: #899aa5;
+}
+
+
+/* ========================================
+   REMAINING SUBTEXT
+======================================== */
+
+.earning-card.remaining .earning-subtext {
+    color: #a7b5bd;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+    text-decoration-color: rgba(167, 181, 189, 0.35);
+
+    text-underline-offset: 3px;
+
+    transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+
+.earning-card.remaining .earning-subtext:hover {
+    color: #63cce5;
+
+    text-decoration-color: rgba(99, 204, 229, 0.6);
+}
+
+
+/* ========================================
+   NUMERIC CONTENT
+======================================== */
+
+.earning-value,
+.earning-value span,
+.earning-value small {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .earnings-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .earnings-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .earning-card {
+        min-height: 120px;
+
+        padding: 18px 19px;
+
+        border-radius: 13px;
+    }
+
+    .earning-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+
+        border-radius: 13px;
+    }
+
+    .earning-label {
+        font-size: 12px;
+    }
+
+    .earning-value span {
+        font-size: 27px;
+    }
+
+    .earning-value small {
+        font-size: 11px;
+    }
+
+    .earning-subtext {
+        font-size: 10px;
+    }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+    .earning-card {
+        gap: 13px;
+
+        padding: 16px;
+    }
+
+    .earning-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+
+        border-radius: 12px;
+    }
+
+    .earning-value span {
+        font-size: 24px;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .earning-card,
+    .earning-icon,
+    .earning-value span {
+        transition: none;
+    }
+}

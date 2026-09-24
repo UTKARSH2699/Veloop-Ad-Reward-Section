@@ -1,0 +1,876 @@
+/* ========================================
+   EARNING STATS
+======================================== */
+
+.earning-stats {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+    margin-top: 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   COMMON CARD
+======================================== */
+
+.earning-stats .earning-card {
+    width: 100%;
+    min-height: 230px;
+
+    position: relative;
+
+    box-sizing: border-box;
+    padding: 20px;
+
+    background: #141924;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ========================================
+   TOP ACCENT
+======================================== */
+
+.earning-stats .earning-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+    right: 10%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   DAILY STREAK
+======================================== */
+
+.earning-stats .earning-card:nth-child(1) {
+    border-color: rgba(251, 191, 36, 0.16);
+}
+
+.earning-stats .earning-card:nth-child(1)::before {
+    background: rgba(251, 191, 36, 0.42);
+}
+
+.earning-stats .earning-card:nth-child(1):hover {
+    border-color: rgba(251, 191, 36, 0.28);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(251, 191, 36, 0.06);
+}
+
+
+/* ========================================
+   RECENT EARNINGS
+======================================== */
+
+.earning-stats .earning-card:nth-child(2) {
+    border-color: rgba(96, 165, 250, 0.16);
+}
+
+.earning-stats .earning-card:nth-child(2)::before {
+    background: rgba(96, 165, 250, 0.38);
+}
+
+.earning-stats .earning-card:nth-child(2):hover {
+    border-color: rgba(96, 165, 250, 0.28);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(96, 165, 250, 0.05);
+}
+
+
+/* ========================================
+   WEEKLY STATS
+======================================== */
+
+.earning-stats .earning-card:nth-child(3) {
+    border-color: rgba(52, 211, 153, 0.16);
+}
+
+.earning-stats .earning-card:nth-child(3)::before {
+    background: rgba(52, 211, 153, 0.40);
+}
+
+.earning-stats .earning-card:nth-child(3):hover {
+    border-color: rgba(52, 211, 153, 0.28);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18),
+        0 0 20px rgba(52, 211, 153, 0.05);
+}
+
+
+/* ========================================
+   COMMON HOVER
+======================================== */
+
+.earning-stats .earning-card:hover {
+    transform: translateY(-3px);
+
+    background: #171d29;
+}
+
+
+/* ========================================
+   CARD HEADERS
+======================================== */
+
+.stats-card-header,
+.streak-heading {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stats-card-header h3,
+.streak-title h3 {
+    margin: 0;
+
+    color: #F1F3F7;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+
+    line-height: 1.25;
+}
+
+
+/* ========================================
+   STREAK TITLE
+======================================== */
+
+.streak-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.streak-title svg {
+    color: #FBBF24;
+
+    flex-shrink: 0;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.streak-card:hover .streak-title svg {
+    color: #FBBF24;
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   STREAK CONTENT
+======================================== */
+
+.streak-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.streak-content {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    box-sizing: border-box;
+}
+
+.streak-number-area {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.streak-number-row {
+    display: flex;
+    align-items: baseline;
+
+    gap: 6px;
+
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+.streak-number {
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+
+    line-height: 1;
+    letter-spacing: -0.6px;
+
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+.streak-days {
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+.streak-number-area p {
+    margin: 7px 0 0;
+
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   STREAK GIFT
+======================================== */
+
+.streak-gift {
+    width: 68px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1a202c;
+
+    border: 1px solid rgba(251, 191, 36, 0.18);
+    border-radius: 9px;
+
+    color: #FBBF24;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.streak-gift svg {
+    width: 42px;
+    height: 42px;
+
+    display: block;
+}
+
+.streak-card:hover .streak-gift {
+    border-color: rgba(251, 191, 36, 0.30);
+
+    background: #1d2430;
+
+    box-shadow:
+        0 0 16px rgba(251, 191, 36, 0.06);
+}
+
+
+/* ========================================
+   STREAK WEEK
+======================================== */
+
+.streak-week {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    margin-top: auto;
+    padding: 18px 2px 2px;
+
+    box-sizing: border-box;
+}
+
+.streak-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+/* ========================================
+   STREAK CHECK
+======================================== */
+
+.streak-check {
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+
+    background: #1d2430;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    color: transparent;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================
+   COMPLETED DAYS
+======================================== */
+
+.streak-check.completed {
+    background: rgba(52, 211, 153, 0.16);
+
+    border-color: rgba(52, 211, 153, 0.55);
+
+    color: #34D399;
+
+    box-shadow:
+        0 0 9px rgba(52, 211, 153, 0.08);
+}
+
+.streak-check.completed:hover {
+    background: rgba(52, 211, 153, 0.22);
+
+    border-color: rgba(52, 211, 153, 0.75);
+
+    color: #6ee7b7;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 14px rgba(52, 211, 153, 0.14);
+}
+
+.streak-check svg {
+    width: 12px;
+    height: 12px;
+}
+
+.streak-check:not(.completed):hover {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   RECENT EARNINGS
+======================================== */
+
+.recent-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-all {
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.view-all:hover {
+    color: #60A5FA;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* ========================================
+   RECENT LIST
+======================================== */
+
+.recent-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+
+    flex: 1;
+}
+
+.recent-item {
+    width: 100%;
+    min-height: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    gap: 8px;
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+.recent-left {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* ========================================
+   RECENT ICON
+======================================== */
+
+.recent-icon {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(96, 165, 250, 0.08);
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+
+    color: #60A5FA;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.recent-item:hover .recent-icon {
+    background: rgba(96, 165, 250, 0.13);
+
+    border-color: rgba(96, 165, 250, 0.30);
+
+    color: #93c5fd;
+}
+
+
+/* ========================================
+   RECENT TEXT
+======================================== */
+
+.recent-left > span {
+    min-width: 0;
+
+    color: #F1F3F7;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ========================================
+   RECENT EARNING AMOUNT
+======================================== */
+
+.recent-item strong {
+    flex-shrink: 0;
+
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    font-variant-numeric: tabular-nums lining-nums;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.recent-item:hover strong {
+    color: #FCD34D;
+
+    transform: translateX(-2px);
+}
+
+
+/* ========================================
+   WEEKLY CARD
+======================================== */
+
+.weekly-card {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   WEEKLY TOTAL
+======================================== */
+
+.weekly-top {
+    display: flex;
+    align-items: center;
+
+    margin-top: 12px;
+}
+
+.weekly-total {
+    display: flex;
+    align-items: baseline;
+
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+.weekly-total strong {
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+
+    line-height: 1;
+    letter-spacing: -0.4px;
+
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+.weekly-total span {
+    margin-left: 5px;
+
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   WEEKLY GROWTH
+======================================== */
+
+.weekly-growth {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10px;
+
+    color: #34D399;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+.weekly-growth small {
+    margin-top: 2px;
+
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+
+/* ========================================
+   WEEKLY CHART
+======================================== */
+
+.weekly-chart {
+    width: 100%;
+    height: 83px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: end;
+
+    gap: 7px;
+
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.chart-column {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+}
+
+.chart-bar-area {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/* ========================================
+   CHART BARS
+======================================== */
+
+.chart-bar {
+    width: 17px;
+    max-width: 100%;
+
+    min-height: 4px;
+
+    background: #365a4c;
+
+    border-radius: 3px 3px 2px 2px;
+
+    transition:
+        height 0.3s ease,
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+.chart-bar:hover {
+    background: #34D399;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   HIGHEST DAY
+======================================== */
+
+.chart-bar.highest {
+    background: #FBBF24;
+}
+
+.chart-bar.highest:hover {
+    background: #FCD34D;
+}
+
+
+/* ========================================
+   CHART LABELS
+======================================== */
+
+.chart-column > span {
+    color: #98A2B3;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+/* ========================================
+   NUMBER ALIGNMENT
+======================================== */
+
+.streak-number,
+.streak-days,
+.recent-item strong,
+.weekly-total,
+.weekly-total strong,
+.weekly-total span {
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .earning-stats {
+        gap: 11px;
+    }
+
+    .earning-stats .earning-card {
+        padding: 16px;
+        min-height: 230px;
+    }
+
+    .streak-gift {
+        width: 62px;
+        height: 58px;
+    }
+
+    .streak-number {
+        font-size: 30px;
+    }
+
+    .weekly-total strong {
+        font-size: 26px;
+    }
+
+    .chart-bar {
+        width: 14px;
+    }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 700px) {
+
+    .earning-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .earning-stats .weekly-card {
+        grid-column: span 2;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .earning-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .earning-stats .weekly-card {
+        grid-column: auto;
+    }
+
+    .earning-stats .earning-card {
+        min-height: 230px;
+        height: auto;
+        padding: 16px;
+    }
+
+    .recent-item {
+        min-height: 31px;
+        height: 31px;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 350px) {
+
+    .streak-gift {
+        width: 58px;
+        height: 55px;
+    }
+
+    .streak-number {
+        font-size: 28px;
+    }
+
+    .weekly-total strong {
+        font-size: 23px;
+    }
+
+    .weekly-chart {
+        gap: 4px;
+    }
+}

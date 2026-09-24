@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Cyan Neon Gradients -->
+    <linearGradient id="v-cyan-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="v-cyan-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FF"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="v-cyan-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+
+    <!-- Clean Vector Glow -->
+    <filter id="vector-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Background for Contrast -->
+  <rect width="100%" height="100%" fill="#090D16" rx="20"/>
+
+  <!-- Simplified Faceted Geometric V Mark -->
+  <g filter="url(#vector-glow)" transform="translate(0, 10)">
+    <!-- Outer Left Facet -->
+    <polygon points="120,80 170,80 200,280 150,220" fill="url(#v-cyan-dark)" />
+    
+    <!-- Inner Left Facet -->
+    <polygon points="170,80 200,160 200,280" fill="url(#v-cyan-mid)" />
+
+    <!-- Outer Right Facet -->
+    <polygon points="280,80 230,80 200,280 250,220" fill="url(#v-cyan-dark)" />
+
+    <!-- Inner Right Facet -->
+    <polygon points="230,80 200,160 200,280" fill="url(#v-cyan-light)" />
+
+    <!-- Top Connecting Facets -->
+    <polygon points="120,80 170,80 200,160" fill="url(#v-cyan-mid)" />
+    <polygon points="280,80 230,80 200,160" fill="url(#v-cyan-light)" />
+
+    <!-- Core Structural Lines -->
+    <polyline points="120,80 200,280 280,80" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="200" y1="160" x2="200" y2="280" stroke="#FFFFFF" stroke-width="2" opacity="0.8"/>
+  </g>
+</svg>

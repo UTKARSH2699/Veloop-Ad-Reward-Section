@@ -1,0 +1,685 @@
+/* ========================================
+   AD SECTION
+======================================== */
+
+.ad-section {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.ad-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+/* ========================================
+   AD CARD
+======================================== */
+
+.ad-card {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 330px;
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+    grid-template-rows: 40px 160px auto;
+    column-gap: 12px;
+    row-gap: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgba(20, 25, 36, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ad-card:hover {
+    transform: translateY(-3px);
+    background: rgba(23, 29, 41, 0.78);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.ad-header {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    height: 20px;
+    display: block;
+    margin: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ad-category {
+    position: absolute;
+    top: 224px;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   AD DURATION
+======================================== */
+
+.ad-duration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #98A2B3;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   CATEGORY COLORS
+======================================== */
+
+.ad-category.travel {
+    color: #60A5FA;
+    background: rgba(96, 165, 250, 0.10);
+    border-color:
+        rgba(96, 165, 250, 0.24);
+}
+
+.ad-category.lifestyle {
+    color: #C084FC;
+    background: rgba(192, 132, 252, 0.10);
+    border-color:
+        rgba(192, 132, 252, 0.24);
+}
+
+.ad-category.entertainment {
+    color: #F472B6;
+    background: rgba(244, 114, 182, 0.10);
+    border-color:
+        rgba(244, 114, 182, 0.24);
+}
+
+.ad-category.finance {
+    color: #FBBF24;
+    background: rgba(251, 191, 36, 0.10);
+    border-color:
+        rgba(251, 191, 36, 0.24);
+}
+
+.ad-category.technology {
+    color: #34D399;
+    background: rgba(52, 211, 153, 0.10);
+    border-color:
+        rgba(52, 211, 153, 0.24);
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.ad-image-wrapper {
+    grid-column: 1;
+    grid-row: 2;
+    width: 125px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ad-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition:
+        transform 0.25s ease;
+}
+
+.ad-card:hover .ad-image {
+    transform: scale(1.035);
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.ad-content {
+    display: contents;
+}
+
+.ad-title {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin: 0;
+    color: var(--text-primary);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.25;
+    min-width: 0;
+}
+
+.ad-description {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin: 25px 0 0;
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.45;
+    min-width: 0;
+}
+
+.ad-meta {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin-top: 65px;
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.4;
+    min-width: 0;
+}
+
+.ad-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* ========================================
+   CARD FOOTER
+======================================== */
+
+.ad-reward {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 8px;
+    box-sizing: border-box;
+    border-top: 1px solid
+        rgba(255, 255, 255, 0.07);
+}
+
+
+/* ========================================
+   REWARD INFO
+======================================== */
+
+.ad-reward-info {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.ad-reward-amount {
+    color: var(--accent-gold);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+    font-variant-numeric:
+        tabular-nums lining-nums;
+}
+
+.ad-reward-unit {
+    margin-left: 4px;
+    color: var(--text-secondary);
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+/* ========================================
+   WATCH BUTTON
+======================================== */
+
+.ad-watch-button {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-width: 0;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================
+   BLUE WATCH BUTTON
+======================================== */
+
+.ad-watch-button.watch {
+    color: #FFFFFF;
+    background: #2563EB;
+    border-color: #3B82F6;
+    box-shadow:
+        0 5px 14px
+        rgba(37, 99, 235, 0.20);
+}
+
+.ad-watch-button.watch:hover {
+    color: #FFFFFF;
+    background: #3B82F6;
+    border-color: #60A5FA;
+    transform: translateY(-1px);
+    box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.30);
+}
+
+.ad-watch-button.watch:active {
+    transform: translateY(0);
+    box-shadow:
+        0 3px 10px
+        rgba(37, 99, 235, 0.20);
+}
+
+
+/* ========================================
+   RIPPLE
+======================================== */
+
+.ad-watch-button::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background:
+        rgba(255, 255, 255, 0.45);
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ad-watch-button:active::after {
+    animation:
+        buttonRipple 0.55s ease-out;
+}
+
+@keyframes buttonRipple {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+        opacity: 0.55;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(18);
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   WATCHING
+======================================== */
+
+.ad-watch-button.watching {
+    color: #BFDBFE;
+    background:
+        rgba(96, 165, 250, 0.14);
+    border-color:
+        rgba(96, 165, 250, 0.38);
+    cursor: default;
+    box-shadow: none;
+}
+
+
+/* ========================================
+   WATCHED
+======================================== */
+
+.ad-watch-button.watched {
+    color: #6EE7B7;
+    background:
+        rgba(52, 211, 153, 0.12);
+    border-color:
+        rgba(52, 211, 153, 0.35);
+    cursor: default;
+    box-shadow: none;
+}
+
+
+/* ========================================
+   DISABLED
+======================================== */
+
+.ad-watch-button:disabled {
+    opacity: 1;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .ad-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .ad-card {
+        min-height: 330px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    .ad-card {
+        grid-template-columns:
+            115px minmax(0, 1fr);
+        grid-template-rows:
+            40px 150px auto;
+        min-height: 320px;
+        column-gap: 11px;
+    }
+
+    .ad-image-wrapper {
+        width: 115px;
+        height: 150px;
+    }
+
+    .ad-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ad-title {
+        font-size: 14px;
+    }
+
+    .ad-description {
+        font-size: 11px;
+    }
+
+    .ad-category {
+        top: 210px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .ad-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ad-card {
+        min-height: 310px;
+        padding: 12px;
+        grid-template-columns:
+            110px minmax(0, 1fr);
+        grid-template-rows:
+            39px 145px auto;
+        column-gap: 10px;
+    }
+
+    .ad-image-wrapper {
+        width: 110px;
+        height: 145px;
+    }
+
+    .ad-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ad-title {
+        font-size: 14px;
+    }
+
+    .ad-description {
+        font-size: 11px;
+    }
+
+    .ad-reward-amount {
+        font-size: 17px;
+    }
+
+    .ad-watch-button {
+        height: 35px;
+    }
+
+    .ad-category {
+        top: 200px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+
+    .ad-card {
+        min-height: 300px;
+        padding: 11px;
+        grid-template-columns:
+            100px minmax(0, 1fr);
+        grid-template-rows:
+            38px 135px auto;
+        column-gap: 9px;
+    }
+
+    .ad-image-wrapper {
+        width: 100px;
+        height: 135px;
+    }
+
+    .ad-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ad-title {
+        font-size: 13px;
+    }
+
+    .ad-description {
+        font-size: 10px;
+    }
+
+    .ad-meta {
+        font-size: 9px;
+    }
+
+    .ad-watch-button {
+        height: 34px;
+        padding:
+            7px 10px;
+    }
+
+    .ad-category {
+        top: 187px;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 350px) {
+
+    .ad-card {
+        grid-template-columns:
+            90px minmax(0, 1fr);
+        grid-template-rows:
+            36px 125px auto;
+        column-gap: 8px;
+        min-height: 290px;
+    }
+
+    .ad-image-wrapper {
+        width: 90px;
+        height: 125px;
+    }
+
+    .ad-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .ad-title {
+        font-size: 12px;
+    }
+
+    .ad-description {
+        font-size: 10px;
+    }
+
+    .ad-meta {
+        font-size: 8px;
+    }
+
+    .ad-watch-button {
+        height: 33px;
+        font-size: 10px;
+    }
+
+    .ad-category {
+        top: 175px;
+    }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ad-card,
+    .ad-image,
+    .ad-watch-button {
+        transition: none;
+    }
+
+    .ad-watch-button:active::after {
+        animation: none;
+    }
+
+}

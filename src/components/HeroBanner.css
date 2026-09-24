@@ -1,0 +1,800 @@
+/* ========================================
+HERO BANNER — GLASS SURFACE
+======================================== */
+
+.hero-banner {
+width: 100%;
+max-width: 1500px;
+min-height: 350px;
+margin: 0 auto;
+
+
+position: relative;
+overflow: hidden;
+
+display: flex;
+align-items: center;
+
+border: 1px solid rgba(255, 255, 255, 0.10);
+border-radius: 18px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.065),
+        rgba(255, 255, 255, 0.018) 45%,
+        rgba(246, 201, 45, 0.028)
+    ),
+    rgba(13, 26, 36, 0.78);
+
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+
+box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 4px 14px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+
+isolation: isolate;
+
+transform:
+    translateY(0)
+    rotateX(0deg)
+    rotateY(0deg);
+
+transform-origin: center;
+transform-style: preserve-3d;
+
+will-change: transform;
+
+transition:
+    transform 0.4s cubic-bezier(0.2, 0.75, 0.25, 1),
+    border-color 0.35s ease,
+    box-shadow 0.4s ease,
+    background 0.35s ease;
+
+
+}
+
+/* ========================================
+HERO HOVER — PREMIUM LIFT + TILT
+======================================== */
+
+.hero-banner:hover {
+transform:
+translateY(-5px)
+rotateX(0.8deg)
+rotateY(-0.8deg);
+
+
+border-color: rgba(130, 190, 220, 0.20);
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.022) 45%,
+        rgba(246, 201, 45, 0.032)
+    ),
+    rgba(13, 26, 36, 0.80);
+
+box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.32),
+    0 0 30px rgba(39, 128, 178, 0.065),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+
+}
+
+/* ========================================
+HERO ACTIVE / PRESS
+======================================== */
+
+.hero-banner:active {
+transform:
+translateY(-1px)
+scale(0.997)
+rotateX(0deg)
+rotateY(0deg);
+
+
+transition-duration: 0.12s;
+
+box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+
+}
+
+/* ========================================
+HERO IMAGE
+======================================== */
+
+.hero-banner-image {
+position: absolute;
+inset: 0;
+
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+object-position: center;
+
+z-index: -3;
+
+pointer-events: none;
+user-select: none;
+
+transform: scale(1.015);
+
+transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.25, 1),
+    filter 0.5s ease;
+
+
+}
+
+/* ========================================
+SUBTLE IMAGE MOVEMENT ON HOVER
+======================================== */
+
+.hero-banner:hover .hero-banner-image {
+transform: scale(1.035);
+filter: brightness(1.025);
+}
+
+/* ========================================
+IMAGE OVERLAY
+======================================== */
+
+.hero-banner::before {
+content: "";
+
+position: absolute;
+inset: 0;
+
+z-index: -2;
+
+background:
+    linear-gradient(
+        90deg,
+        rgba(5, 13, 19, 0.96) 0%,
+        rgba(5, 13, 19, 0.89) 30%,
+        rgba(5, 13, 19, 0.62) 55%,
+        rgba(5, 13, 19, 0.20) 82%,
+        rgba(5, 13, 19, 0.08) 100%
+    );
+
+pointer-events: none;
+
+transition:
+    background 0.4s ease;
+
+
+}
+
+/* ========================================
+IMAGE OVERLAY — HOVER
+======================================== */
+
+.hero-banner:hover::before {
+background:
+linear-gradient(
+90deg,
+rgba(5, 13, 19, 0.94) 0%,
+rgba(5, 13, 19, 0.87) 30%,
+rgba(5, 13, 19, 0.59) 55%,
+rgba(5, 13, 19, 0.18) 82%,
+rgba(5, 13, 19, 0.07) 100%
+);
+}
+
+/* ========================================
+PREMIUM LIGHT WASH
+======================================== */
+
+.hero-banner::after {
+content: "";
+
+
+position: absolute;
+inset: 0;
+
+z-index: -1;
+
+background:
+    radial-gradient(
+        circle at 82% 35%,
+        rgba(246, 201, 45, 0.10),
+        transparent 27%
+    ),
+    radial-gradient(
+        circle at 62% 100%,
+        rgba(53, 111, 139, 0.12),
+        transparent 35%
+    ),
+    linear-gradient(
+        115deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.018) 45%,
+        transparent 60%
+    );
+
+background-size:
+    auto,
+    auto,
+    180% 180%;
+
+background-position:
+    center,
+    center,
+    130% 50%;
+
+pointer-events: none;
+
+transition:
+    background-position 0.8s ease,
+    opacity 0.4s ease;
+
+
+}
+
+/* ========================================
+PREMIUM LIGHT WASH — HOVER
+======================================== */
+
+.hero-banner:hover::after {
+background-position:
+center,
+center,
+-20% 50%;
+}
+
+/* ========================================
+HERO CONTENT
+======================================== */
+
+.hero-content {
+width: 54%;
+min-height: 350px;
+
+
+padding: 45px 0 45px 50px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+
+position: relative;
+z-index: 2;
+
+
+}
+
+/* ========================================
+BADGE
+======================================== */
+
+.hero-badge {
+display: flex;
+align-items: center;
+gap: 9px;
+
+
+width: fit-content;
+
+padding: 7px 13px;
+margin-bottom: 18px;
+
+border: 1px solid rgba(246, 201, 45, 0.28);
+border-radius: 999px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(246, 201, 45, 0.13),
+        rgba(246, 201, 45, 0.045)
+    );
+
+color: #f6c92d;
+
+font-family: "Inter", sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.06em;
+line-height: 1.4;
+
+white-space: nowrap;
+
+box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 4px 14px rgba(0, 0, 0, 0.12);
+
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+
+transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+
+
+}
+
+/* ========================================
+BADGE HOVER
+======================================== */
+
+.hero-banner:hover .hero-badge {
+border-color: rgba(246, 201, 45, 0.38);
+
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(246, 201, 45, 0.16),
+        rgba(246, 201, 45, 0.055)
+    );
+
+transform: translateY(-1px);
+
+
+}
+
+/* ========================================
+BADGE ICON
+======================================== */
+
+.badge-icon {
+width: 19px;
+height: 19px;
+
+
+flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 50%;
+
+background: #f6c92d;
+color: #111111;
+
+font-family: "Inter", sans-serif;
+font-size: 8px;
+font-weight: 700;
+
+box-shadow:
+    0 0 0 4px rgba(246, 201, 45, 0.08),
+    0 3px 10px rgba(246, 201, 45, 0.18);
+
+transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+
+}
+
+.hero-banner:hover .badge-icon {
+transform: scale(1.04);
+
+
+box-shadow:
+    0 0 0 4px rgba(246, 201, 45, 0.10),
+    0 4px 14px rgba(246, 201, 45, 0.24);
+
+
+}
+
+/* ========================================
+HEADING
+======================================== */
+
+.hero-content h1 {
+margin: 0 0 15px;
+
+
+color: #ffffff;
+
+font-family: "Space Grotesk", sans-serif;
+font-size: clamp(2.3rem, 4vw, 3.25rem);
+font-weight: 700;
+
+line-height: 1.02;
+letter-spacing: -1.8px;
+
+text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.20);
+
+transition:
+    text-shadow 0.35s ease,
+    transform 0.35s ease;
+
+
+}
+
+/* ========================================
+HEADING HOVER
+======================================== */
+
+.hero-banner:hover .hero-content h1 {
+transform: translateY(-1px);
+
+
+text-shadow:
+    0 3px 22px rgba(0, 0, 0, 0.28);
+
+
+}
+
+/* ========================================
+HEADING ACCENT
+======================================== */
+
+.hero-content h1 span {
+color: #f6c92d;
+
+
+text-shadow:
+    0 0 22px rgba(246, 201, 45, 0.16);
+
+
+}
+
+/* ========================================
+DESCRIPTION
+======================================== */
+
+.hero-content p {
+width: 100%;
+max-width: 500px;
+
+
+margin: 0 0 27px;
+
+color: #b9c5cd;
+
+font-family: "Inter", sans-serif;
+font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+font-weight: 400;
+
+line-height: 1.65;
+
+transition:
+    color 0.35s ease;
+
+
+}
+
+.hero-banner:hover .hero-content p {
+color: #c1ccd4;
+}
+
+/* ========================================
+PRIMARY BUTTON
+======================================== */
+
+.hero-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+gap: 17px;
+
+padding: 13px 21px;
+
+border: 0;
+border-radius: 9px;
+
+background:
+    linear-gradient(
+        135deg,
+        #ffd83f,
+        #f6c92d
+    );
+
+color: #111111;
+
+font-family: "Inter", sans-serif;
+font-size: 13px;
+font-weight: 700;
+line-height: 1.4;
+
+cursor: pointer;
+
+box-shadow:
+    0 7px 18px rgba(246, 201, 45, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+
+}
+
+/* ========================================
+BUTTON ARROW
+======================================== */
+
+.button-arrow {
+width: 9px;
+height: 9px;
+
+
+border-right: 2px solid #111111;
+border-bottom: 2px solid #111111;
+
+transform:
+    rotate(45deg)
+    translateY(-2px);
+
+transition:
+    transform 0.2s ease;
+
+
+}
+
+/* ========================================
+BUTTON HOVER
+======================================== */
+
+.hero-button:hover {
+transform: translateY(-2px);
+
+
+background:
+    linear-gradient(
+        135deg,
+        #ffe066,
+        #ffd229
+    );
+
+box-shadow:
+    0 9px 24px rgba(246, 201, 45, 0.22),
+    0 0 20px rgba(246, 201, 45, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+
+}
+
+.hero-button:hover .button-arrow {
+transform:
+rotate(45deg)
+translateY(2px);
+}
+
+/* ========================================
+BUTTON ACTIVE
+======================================== */
+
+.hero-button:active {
+transform: translateY(0);
+
+
+box-shadow:
+    0 4px 10px rgba(246, 201, 45, 0.12);
+
+
+}
+
+/* ========================================
+LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1400px) {
+.hero-banner {
+min-height: 370px;
+border-radius: 20px;
+}
+
+
+.hero-content {
+    min-height: 370px;
+    padding-left: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3.35rem;
+}
+
+
+}
+
+/* ========================================
+LAPTOP
+======================================== */
+
+@media (max-width: 1100px) {
+.hero-banner {
+min-height: 340px;
+}
+
+
+.hero-content {
+    width: 58%;
+    min-height: 340px;
+    padding-left: 38px;
+}
+
+.hero-content p {
+    max-width: 440px;
+}
+
+
+}
+
+/* ========================================
+TABLET
+======================================== */
+
+@media (max-width: 768px) {
+.hero-banner {
+min-height: 330px;
+border-radius: 15px;
+}
+
+
+/*
+   Reduce the desktop tilt on smaller screens.
+*/
+
+.hero-banner:hover {
+    transform: translateY(-4px);
+}
+
+.hero-content {
+    width: 68%;
+    min-height: 330px;
+    padding: 30px;
+}
+
+.hero-content h1 {
+    font-size: 2.3rem;
+}
+
+.hero-content p {
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.hero-banner::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 13, 19, 0.96) 0%,
+            rgba(5, 13, 19, 0.86) 48%,
+            rgba(5, 13, 19, 0.38) 100%
+        );
+}
+
+.hero-banner::after {
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(246, 201, 45, 0.07),
+            transparent 30%
+        ),
+        linear-gradient(
+            115deg,
+            transparent 25%,
+            rgba(255, 255, 255, 0.015) 45%,
+            transparent 60%
+        );
+}
+
+}
+
+/* ========================================
+MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+.hero-banner {
+min-height: 390px;
+border-radius: 14px;
+}
+
+
+.hero-banner:hover {
+    transform: translateY(-2px);
+}
+
+.hero-banner-image {
+    object-position: 65% center;
+}
+
+.hero-content {
+    width: 100%;
+    min-height: 390px;
+    padding: 28px 24px;
+}
+
+.hero-banner::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 13, 19, 0.97) 0%,
+            rgba(5, 13, 19, 0.90) 55%,
+            rgba(5, 13, 19, 0.50) 100%
+        );
+}
+
+.hero-badge {
+    padding: 6px 10px;
+    margin-bottom: 16px;
+    font-size: 9px;
+    gap: 7px;
+}
+
+.badge-icon {
+    width: 17px;
+    height: 17px;
+    font-size: 7px;
+}
+
+.hero-content h1 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+    letter-spacing: -1.1px;
+}
+
+.hero-content p {
+    max-width: 310px;
+    margin-bottom: 22px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.hero-button {
+    padding: 12px 18px;
+    font-size: 13px;
+    gap: 14px;
+    border-radius: 8px;
+}
+
+
+
+
+/* ========================================
+VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 360px) {
+.hero-banner {
+min-height: 400px;
+}
+
+
+.hero-content {
+    min-height: 400px;
+    padding: 25px 18px;
+}
+
+.hero-badge {
+    font-size: 8px;
+    padding: 6px 9px;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem;
+}
+
+.hero-content p {
+    max-width: 280px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.hero-button {
+    padding: 11px 16px;
+}
+
+
+
+}}
