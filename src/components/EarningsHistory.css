@@ -1,0 +1,634 @@
+/* ========================================
+   EARNINGS HISTORY PAGE
+======================================== */
+
+.earnings-history-page {
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 34px 42px 50px;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(37, 99, 235, 0.13),
+            transparent 32%
+        ),
+        #071522;
+
+    color: #F1F3F7;
+
+    font-family: "Inter", sans-serif;
+}
+
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.history-topbar {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 28px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.history-back-button {
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(96, 165, 250, 0.22);
+    border-radius: 8px;
+
+    background: rgba(17, 35, 53, 0.75);
+
+    color: #B9C4D2;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.history-back-button:hover {
+    background: rgba(37, 99, 235, 0.15);
+
+    border-color: rgba(96, 165, 250, 0.45);
+
+    color: #FFFFFF;
+
+    transform: translateX(-2px);
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.history-title-area {
+    flex: 1;
+}
+
+.history-eyebrow {
+    color: #60A5FA;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.history-title-area h1 {
+    margin: 5px 0 5px;
+
+    color: #F8FAFC;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+
+    letter-spacing: -0.6px;
+}
+
+.history-title-area p {
+    margin: 0;
+
+    color: #8E9BAB;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   SUMMARY
+======================================== */
+
+.history-summary {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+.history-summary-card {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    background: #101D2A;
+
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 10px;
+}
+
+.history-summary-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: rgba(96, 165, 250, 0.10);
+
+    border: 1px solid rgba(96, 165, 250, 0.20);
+
+    color: #60A5FA;
+}
+
+.history-summary-card span {
+    display: block;
+
+    color: #8E9BAB;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.history-summary-card strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #F8FAFC;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   MAIN HISTORY CONTAINER
+======================================== */
+
+.history-container {
+    width: 100%;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    background: #101D2A;
+
+    border: 1px solid rgba(96, 165, 250, 0.16);
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   HISTORY HEADER
+======================================== */
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.history-header h2 {
+    margin: 0;
+
+    color: #F1F3F7;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.history-header p {
+    margin: 4px 0 0;
+
+    color: #7F8B9B;
+
+    font-size: 11px;
+}
+
+.history-count {
+    padding: 6px 10px;
+
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 20px;
+
+    color: #60A5FA;
+
+    background: rgba(96, 165, 250, 0.07);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   HISTORY LIST
+======================================== */
+
+.history-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   HISTORY ITEM
+======================================== */
+
+.history-item {
+    width: 100%;
+    min-height: 72px;
+
+    display: grid;
+
+    grid-template-columns:
+        38px
+        42px
+        minmax(180px, 1fr)
+        80px
+        95px
+        110px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    padding: 10px 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item:hover {
+    background: rgba(96, 165, 250, 0.035);
+}
+
+
+/* ========================================
+   NUMBER
+======================================== */
+
+.history-number {
+    color: #536173;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   AD ICON
+======================================== */
+
+.history-ad-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(96, 165, 250, 0.08);
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+
+    color: #60A5FA;
+}
+
+.history-item.completed .history-ad-icon {
+    background: rgba(52, 211, 153, 0.08);
+
+    border-color: rgba(52, 211, 153, 0.22);
+
+    color: #34D399;
+}
+
+
+/* ========================================
+   AD INFORMATION
+======================================== */
+
+.history-ad-info {
+    min-width: 0;
+}
+
+.history-ad-title-row {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.history-ad-info h3 {
+    margin: 0;
+
+    color: #F1F3F7;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.history-ad-title-row span {
+    padding: 3px 6px;
+
+    border-radius: 4px;
+
+    background: rgba(96, 165, 250, 0.08);
+
+    color: #7FB7F5;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+.history-ad-info p {
+    margin: 4px 0 0;
+
+    color: #788698;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ========================================
+   DURATION
+======================================== */
+
+.history-meta {
+    display: flex;
+    justify-content: center;
+}
+
+.history-meta div {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #8793A3;
+
+    font-size: 10px;
+}
+
+
+/* ========================================
+   REWARD
+======================================== */
+
+.history-reward {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 3px;
+}
+
+.history-reward span {
+    color: #687587;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 0.6px;
+}
+
+.history-reward strong {
+    color: #FBBF24;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.history-status {
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.status-completed {
+    background: rgba(52, 211, 153, 0.08);
+
+    border: 1px solid rgba(52, 211, 153, 0.18);
+
+    color: #34D399;
+}
+
+.status-available {
+    background: rgba(96, 165, 250, 0.07);
+
+    border: 1px solid rgba(96, 165, 250, 0.16);
+
+    color: #7FB7F5;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.history-footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 3px 0;
+
+    color: #536173;
+
+    font-size: 10px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+    .earnings-history-page {
+        padding: 28px 25px 40px;
+    }
+
+    .history-item {
+        grid-template-columns:
+            30px
+            38px
+            minmax(150px, 1fr)
+            60px
+            85px
+            95px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .earnings-history-page {
+        padding: 20px 14px 30px;
+    }
+
+    .history-topbar {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .history-title-area h1 {
+        font-size: 25px;
+    }
+
+    .history-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .history-container {
+        padding: 16px;
+    }
+
+    .history-header {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .history-item {
+        grid-template-columns:
+            30px
+            38px
+            minmax(120px, 1fr)
+            70px;
+
+        gap: 8px;
+    }
+
+    .history-meta {
+        display: none;
+    }
+
+    .history-reward {
+        display: none;
+    }
+
+    .history-status {
+        font-size: 8px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .history-footer {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .history-item {
+        grid-template-columns:
+            30px
+            36px
+            minmax(100px, 1fr)
+            80px;
+    }
+
+    .history-ad-info p {
+        display: none;
+    }
+
+    .history-ad-title-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 3px;
+    }
+}

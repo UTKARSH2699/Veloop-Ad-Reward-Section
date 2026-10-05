@@ -1,15 +1,15 @@
 import "./ProgressBar.css";
 import { Target } from "lucide-react";
 
-function ProgressBar({ adsWatched, dailyGoal }) {
+function ProgressBar({ adsWatched, dailyGoal = 8 }) {
 
     const percentage = Math.min(
-        Math.round((adsWatched / dailyGoal) * 100),
+        Math.round((adsWatched / 8) * 100),
         100
     );
 
     const remainingAds = Math.max(
-        dailyGoal - adsWatched,
+        8 - adsWatched,
         0
     );
 
@@ -27,19 +27,13 @@ function ProgressBar({ adsWatched, dailyGoal }) {
 
                 <div className="progress-top">
 
-                    <div>
-                        <h3>
-                            Daily Earnings Progress
-                        </h3>
+                    <h3>
+                        Daily Earnings Progress
+                    </h3>
 
-                        <p>
-                            Watch more ads to reach your daily goal.
-                        </p>
-                    </div>
-
-                    <span className="progress-percent">
-                        {percentage}%
-                    </span>
+                    <p>
+                        Watch more ads to reach your daily goal.
+                    </p>
 
                 </div>
 
@@ -57,13 +51,13 @@ function ProgressBar({ adsWatched, dailyGoal }) {
                 <div className="progress-info">
 
                     <span>
-                        {adsWatched} / {dailyGoal} ads
+                        {adsWatched} / 8 ads
                     </span>
 
-                    <span>
-                        {remainingAds} ads remaining
-                    </span>
+                </div>
 
+                <div className="progress-percent">
+                    {percentage}%
                 </div>
 
             </div>

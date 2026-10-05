@@ -1,81 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap");
 
+
 /* ========================================
-DESIGN TOKENS
+   DESIGN TOKENS
 ======================================== */
 
 :root {
-/* Backgrounds */
---bg-primary: #0A0E16;
---surface-card: #141924;
 
+    /* Backgrounds */
+    --bg-primary: #0A0E16;
+    --surface-card: #141924;
 
-/* Borders */
---border-default: rgba(255, 255, 255, 0.08);
---border-strong: rgba(255, 255, 255, 0.12);
+    /* Borders */
+    --border-default: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.12);
 
-/* Text */
---text-primary: #F1F3F7;
---text-secondary: #98A2B3;
+    /* Text */
+    --text-primary: #F1F3F7;
+    --text-secondary: #98A2B3;
 
-/* Accent */
---accent-gold: #FBBF24;
+    /* Accent */
+    --accent-gold: #FBBF24;
 
-/* States */
---success: #34D399;
---progress: #60A5FA;
+    /* States */
+    --success: #34D399;
+    --progress: #60A5FA;
 
-/* Typography */
---font-heading: "Space Grotesk", sans-serif;
---font-body: "Inter", sans-serif;
+    /* Typography */
+    --font-heading: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
 
-/* Numeric */
---numeric-features: lining-nums tabular-nums;
-
-
+    /* Numeric */
+    --numeric-features: lining-nums tabular-nums;
 }
 
+
 /* ========================================
-GLOBAL RESET
+   GLOBAL RESET
 ======================================== */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-
-html {
-scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-min-height: 100vh;
-
-
-background: var(--bg-primary);
-color: var(--text-primary);
-
-font-family: var(--font-body);
-font-size: 14px;
-font-weight: 400;
-line-height: 1.5;
-
-overflow-x: hidden;
-
--webkit-font-smoothing: antialiased;
-text-rendering: optimizeLegibility;
-
-
-}
-
-#root {
-width: 100%;
-min-height: 100vh;
-}
 
 /* ========================================
-GLOBAL TYPOGRAPHY
+   DOCUMENT / SCROLL FIX
+======================================== */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    scroll-behavior: smooth;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--bg-primary);
+    color: var(--text-primary);
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ========================================
+   ROOT
+======================================== */
+
+#root {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    height: auto;
+
+    overflow: visible;
+}
+
+
+/* ========================================
+   GLOBAL TYPOGRAPHY
 ======================================== */
 
 h1,
@@ -84,28 +112,35 @@ h3,
 h4,
 h5,
 h6 {
-font-family: var(--font-heading);
-font-weight: 600;
-line-height: 1.2;
-color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary);
 }
 
+
 p {
-font-family: var(--font-body);
-font-weight: 400;
-line-height: 1.5;
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.5;
 }
+
+
+/* ========================================
+   FORM ELEMENTS
+======================================== */
 
 button,
 label,
 input,
 textarea,
 select {
-font-family: var(--font-body);
+    font-family: var(--font-body);
 }
 
+
 /* ========================================
-NUMERIC / FINANCIAL TYPOGRAPHY
+   NUMERIC / FINANCIAL TYPOGRAPHY
 ======================================== */
 
 .stat-number,
@@ -119,71 +154,85 @@ NUMERIC / FINANCIAL TYPOGRAPHY
 .weekly-total strong,
 .streak-number,
 .recent-item strong {
-font-family: var(--font-heading);
-font-variant-numeric: var(--numeric-features);
-font-feature-settings:
-"tnum" 1,
-"lnum" 1;
+    font-family: var(--font-heading);
+
+    font-variant-numeric: var(--numeric-features);
+
+    font-feature-settings:
+        "tnum" 1,
+        "lnum" 1;
 }
 
+
 /* ========================================
-PRIMARY CURRENCY COLOR
+   PRIMARY CURRENCY COLOR
 ======================================== */
 
 .reward-value,
 .reward-value small,
 .earning-value small,
 .weekly-total span {
-color: var(--accent-gold);
+    color: var(--accent-gold);
 }
 
+
 /* ========================================
-TEXT SELECTION
+   TEXT SELECTION
 ======================================== */
 
 ::selection {
-color: var(--bg-primary);
-background: var(--accent-gold);
+    color: var(--bg-primary);
+    background: var(--accent-gold);
 }
 
+
 /* ========================================
-SCROLLBAR
+   SCROLLBAR
 ======================================== */
 
 ::-webkit-scrollbar {
-width: 7px;
+    width: 7px;
 }
+
 
 ::-webkit-scrollbar-track {
-background: var(--bg-primary);
+    background: var(--bg-primary);
 }
+
 
 ::-webkit-scrollbar-thumb {
-background: #2A3140;
-border-radius: 999px;
+    background: #2A3140;
+    border-radius: 999px;
 }
+
 
 ::-webkit-scrollbar-thumb:hover {
-background: #3A4354;
+    background: #3A4354;
 }
 
+
 /* ========================================
-LARGE DESKTOP
+   LARGE DESKTOP
 ======================================== */
 
 @media (min-width: 1400px) {
-body {
-font-size: 14px;
-}
+
+    body {
+        font-size: 14px;
+    }
+
 }
 
+
 /* ========================================
-MOBILE
+   MOBILE
 ======================================== */
 
 @media (max-width: 480px) {
-body {
-font-size: 14px;
-line-height: 1.5;
-}
+
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
 }

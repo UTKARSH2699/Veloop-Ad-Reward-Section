@@ -1,0 +1,365 @@
+/* ========================================
+   TUTORIAL / HOW REWARDS WORK
+======================================== */
+
+.tutorial-section {
+    width: 100%;
+    margin-top: 18px;
+    padding: 20px 22px 22px;
+
+    background: #0d1822;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.tutorial-header {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.tutorial-title {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #f4f6f8;
+}
+
+
+.tutorial-subtitle {
+    margin: 5px 0 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #8995a1;
+}
+
+
+.tutorial-tagline {
+    padding-top: 2px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #aeb7c1;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.tutorial-content {
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+/* ========================================
+   STEPS
+======================================== */
+
+.tutorial-steps {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.tutorial-step {
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    flex: 1;
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.tutorial-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 199, 44, 0.13);
+    border: 1px solid rgba(255, 199, 44, 0.14);
+
+    color: #ffc72c;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 199, 44, 0.02),
+        0 5px 16px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ========================================
+   STEP INFORMATION
+======================================== */
+
+.tutorial-step-info {
+    min-width: 0;
+}
+
+
+.tutorial-step-info h3 {
+    margin: 1px 0 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #f2f4f6;
+}
+
+
+.tutorial-step-info h3 span {
+    color: #d5dbe1;
+}
+
+
+.tutorial-step-info p {
+    margin: 0;
+
+    max-width: 155px;
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    color: #8e9aa5;
+}
+
+
+/* ========================================
+   ARROWS
+======================================== */
+
+.tutorial-arrow {
+    width: 28px;
+    min-width: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #66737e;
+}
+
+
+/* ========================================
+   WALLET BUTTON
+======================================== */
+
+.tutorial-wallet-button {
+    height: 43px;
+    min-width: 160px;
+
+    padding: 0 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid #d8ae20;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #f4f6f8;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.tutorial-wallet-button svg {
+    color: #ffc72c;
+
+    transition: transform 0.2s ease;
+}
+
+
+.tutorial-wallet-button:hover {
+    background: #ffc72c;
+    border-color: #ffc72c;
+
+    color: #111820;
+
+    transform: translateY(-1px);
+}
+
+
+.tutorial-wallet-button:hover svg {
+    color: #111820;
+    transform: translateX(3px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .tutorial-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tutorial-steps {
+        width: 100%;
+    }
+
+    .tutorial-wallet-button {
+        align-self: flex-end;
+    }
+}
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    .tutorial-section {
+        padding: 18px;
+    }
+
+    .tutorial-header {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .tutorial-tagline {
+        white-space: normal;
+    }
+
+    .tutorial-content {
+        margin-top: 18px;
+    }
+
+    .tutorial-steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .tutorial-arrow {
+        display: none;
+    }
+
+    .tutorial-step-info p {
+        max-width: 190px;
+    }
+
+    .tutorial-wallet-button {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+
+    .tutorial-section {
+        margin-top: 14px;
+        padding: 17px 15px 18px;
+
+        border-radius: 9px;
+    }
+
+    .tutorial-title {
+        font-size: 16px;
+    }
+
+    .tutorial-subtitle {
+        font-size: 11px;
+    }
+
+    .tutorial-tagline {
+        font-size: 10px;
+    }
+
+    .tutorial-content {
+        margin-top: 17px;
+        gap: 18px;
+    }
+
+    .tutorial-steps {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .tutorial-step {
+        gap: 11px;
+    }
+
+    .tutorial-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+    .tutorial-step-info h3 {
+        font-size: 13px;
+    }
+
+    .tutorial-step-info p {
+        max-width: none;
+        font-size: 10px;
+    }
+
+    .tutorial-wallet-button {
+        height: 42px;
+    }
+}

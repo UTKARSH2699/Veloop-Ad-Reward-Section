@@ -10,81 +10,69 @@ import {
 
 import "./EarningStats.css";
 
-
 const defaultRecentEarnings = [
     {
         name: "FinVerse Pro",
-        reward: 38
+        reward: 38,
     },
     {
         name: "Stridex",
-        reward: 28
+        reward: 28,
     },
     {
         name: "DriveEZ",
-        reward: 30
+        reward: 30,
     },
     {
         name: "Melody Beats",
-        reward: 20
+        reward: 20,
     },
     {
         name: "SafeNet VPN",
-        reward: 18
-    }
+        reward: 18,
+    },
 ];
-
 
 const defaultWeeklyData = [
     {
         day: "Mon",
-        value: 42
+        value: 42,
     },
     {
         day: "Tue",
-        value: 58
+        value: 58,
     },
     {
         day: "Wed",
-        value: 49
+        value: 49,
     },
     {
         day: "Thu",
-        value: 63
+        value: 63,
     },
     {
         day: "Fri",
-        value: 70
+        value: 70,
     },
     {
         day: "Sat",
-        value: 78
+        value: 78,
     },
     {
         day: "Sun",
-        value: 100
-    }
+        value: 100,
+    },
 ];
 
-
 function EarningStats({
-
     streak = 7,
-
     completedDays = 5,
-
     recentEarnings = defaultRecentEarnings,
-
     weeklyTotal = 1260,
-
     weeklyGrowth = 18,
-
     weeklyData = defaultWeeklyData,
-
     onViewAll,
-
 }) {
-
     const days = [
         "M",
         "T",
@@ -92,9 +80,8 @@ function EarningStats({
         "T",
         "F",
         "S",
-        "S"
+        "S",
     ];
-
 
     const maxWeeklyValue = Math.max(
         ...weeklyData.map(
@@ -103,11 +90,8 @@ function EarningStats({
         1
     );
 
-
     return (
-
         <section className="earning-stats">
-
 
             {/* =========================
                 DAILY STREAK
@@ -132,7 +116,6 @@ function EarningStats({
 
                 </div>
 
-
                 <div className="streak-content">
 
                     <div className="streak-number-area">
@@ -155,7 +138,6 @@ function EarningStats({
 
                     </div>
 
-
                     <div className="streak-gift">
 
                         <Gift
@@ -167,7 +149,6 @@ function EarningStats({
 
                 </div>
 
-
                 <div className="streak-week">
 
                     {days.map((day, index) => {
@@ -176,7 +157,6 @@ function EarningStats({
                             index < completedDays;
 
                         return (
-
                             <div
                                 className="streak-day"
                                 key={`${day}-${index}`}
@@ -191,12 +171,10 @@ function EarningStats({
                                 >
 
                                     {completed && (
-
                                         <Check
                                             size={12}
                                             strokeWidth={3}
                                         />
-
                                     )}
 
                                 </div>
@@ -206,9 +184,7 @@ function EarningStats({
                                 </span>
 
                             </div>
-
                         );
-
                     })}
 
                 </div>
@@ -229,6 +205,7 @@ function EarningStats({
                     </h3>
 
                     <button
+                        type="button"
                         className="view-all"
                         onClick={onViewAll}
                     >
@@ -236,7 +213,6 @@ function EarningStats({
                     </button>
 
                 </div>
-
 
                 <div className="recent-list">
 
@@ -254,19 +230,15 @@ function EarningStats({
                                     <div className="recent-icon">
 
                                         {index === 4 ? (
-
                                             <ShieldCheck
                                                 size={12}
                                                 strokeWidth={2}
                                             />
-
                                         ) : (
-
                                             <UserRound
                                                 size={12}
                                                 strokeWidth={2}
                                             />
-
                                         )}
 
                                     </div>
@@ -276,7 +248,6 @@ function EarningStats({
                                     </span>
 
                                 </div>
-
 
                                 <strong>
                                     +{earning.reward} VEs
@@ -305,7 +276,6 @@ function EarningStats({
 
                 </div>
 
-
                 <div className="weekly-top">
 
                     <div className="weekly-total">
@@ -320,7 +290,6 @@ function EarningStats({
 
                     </div>
 
-
                     <div className="weekly-growth">
 
                         <span>
@@ -334,7 +303,6 @@ function EarningStats({
                     </div>
 
                 </div>
-
 
                 <div className="weekly-chart">
 
@@ -351,7 +319,6 @@ function EarningStats({
                                 maxWeeklyValue;
 
                             return (
-
                                 <div
                                     className="chart-column"
                                     key={`${item.day}-${index}`}
@@ -367,7 +334,7 @@ function EarningStats({
                                             }`}
                                             style={{
                                                 height:
-                                                    `${height}%`
+                                                    `${height}%`,
                                             }}
                                         />
 
@@ -378,9 +345,7 @@ function EarningStats({
                                     </span>
 
                                 </div>
-
                             );
-
                         }
                     )}
 
@@ -389,10 +354,7 @@ function EarningStats({
             </div>
 
         </section>
-
     );
-
 }
-
 
 export default EarningStats;

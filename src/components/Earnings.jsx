@@ -2,9 +2,9 @@ import React from "react";
 
 import {
     Coins,
-    TrendingUp,
-    Play,
-    Clock,
+    Wallet,
+    PlayCircle,
+    CalendarPlus,
 } from "lucide-react";
 
 import "./Earnings.css";
@@ -95,7 +95,7 @@ function Earnings({ earnings }) {
                 safeEarnings.lifetime
             ).toLocaleString(),
             unit: "VEs",
-            icon: TrendingUp,
+            icon: Wallet,
             type: "lifetime",
             subtext: "All time",
         },
@@ -105,7 +105,7 @@ function Earnings({ earnings }) {
             label: "Ads Watched Today",
             value: safeEarnings.adsWatched,
             unit: "Ads",
-            icon: Play,
+            icon: PlayCircle,
             type: "ads",
             subtext: "Ads completed today",
         },
@@ -115,12 +115,12 @@ function Earnings({ earnings }) {
             label: "Remaining Ads",
             value: safeEarnings.remaining,
             unit: "Ads",
-            icon: Clock,
+            icon: CalendarPlus,
             type: "remaining",
             subtext:
-                safeEarnings.remaining > 0  ?""
+                safeEarnings.remaining > 0
+                    ? ""
                     : "Daily Goal Completed",
-                   
         },
 
     ];
